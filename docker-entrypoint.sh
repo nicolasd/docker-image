@@ -21,4 +21,4 @@ tar -xvzf ioncube_loaders_lin_x86-64.tar.gz
 
 #restart Apache
 service apache2 stop
-/usr/sbin/apache2 start -D FOREGROUND
+apachectl -D FOREGROUND
