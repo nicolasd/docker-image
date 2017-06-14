@@ -1,9 +1,9 @@
 ubuntu:
-  image: ubuntu:14.04
+  image: nicolasd86/docker-image
   links:
     - picomto_db:db
   ports:
-    - 8080:80
+    - 80:80
 picomto_db:
   image: mysql/mysql-server
   environment:
