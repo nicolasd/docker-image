@@ -43,3 +43,4 @@ COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 80
+CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
