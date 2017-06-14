@@ -10,7 +10,6 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -qq update && \
     apt-get install -qqy \
       curl \
-      openjdk-8-jdk \
       ssh \
       net-tools \
       openssh-server \
@@ -26,8 +25,12 @@ RUN apt-get -qq update && \
       inkscape
 
 #Install ffmpeg
-RUN add-apt-repository ppa:mc3man/trusty-media && \
+RUN add-apt-repository -y ppa:mc3man/trusty-media && \
         apt-get update && \
         apt-get install -qqy ffmpeg \
-            libav-tools \
+            libav-tools
 
+#Install Java
+RUN add-apt-repository -y ppa:webupd8team/java && \
+        apt-get update && \
+        apt-get install -qqy oracle-java8-installer
