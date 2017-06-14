@@ -1,7 +1,6 @@
 #
 # Docker Image
 #
-
 FROM ubuntu:14.04
 MAINTAINER Nicolas DIERICK <nicolas.dierick@picomto.com>
 
