@@ -41,6 +41,7 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-
 RUN apt-get install -qqy oracle-java8-installer
 
 COPY docker-entrypoint.sh /entrypoint.sh
+RUN chmod u+rwx /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 80
