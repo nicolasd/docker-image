@@ -22,7 +22,7 @@ RUN apt-get -qq update && \
       pngcrush \
       texlive-* \
       libjpeg-progs \
-      mysql \
+      mysql-client \
       inkscape
 
 #Install ffmpeg
