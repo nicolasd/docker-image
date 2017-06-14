@@ -14,10 +14,11 @@ a2enmod rewrite
 #Configure Ioncube
 wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 tar -xvzf ioncube_loaders_lin_x86-64.tar.gz
-cp ioncube/ioncube_loader_lin_5.5.so /usr/lib/php/20151012
-echo "zend_extension = /usr/lib/php/20151012/ioncube_loader_lin_5.5.so" > /etc/php5/apache2/conf.d
-echo "zend_extension = /usr/lib/php/20151012/ioncube_loader_lin_5.5.so" > /etc/php5/cli/conf.d
-rm ioncube -Rf
+#cp ioncube/ioncube_loader_lin_5.5.so /usr/lib/php/20151012
+#echo "zend_extension = /usr/lib/php/20121212/ioncube_loader_lin_5.5.so" > /etc/php5/apache2/conf.d
+#echo "zend_extension = /usr/lib/php/20121212/ioncube_loader_lin_5.5.so" > /etc/php5/cli/conf.d
+#rm ioncube -Rf
 
 #restart Apache
-service apache2 restart
+service apache2 stop
+/usr/sbin/apache2 start -D FOREGROUND
