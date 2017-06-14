@@ -36,8 +36,9 @@ RUN add-apt-repository -y ppa:mc3man/trusty-media && \
 
 #Install Java
 RUN add-apt-repository -y ppa:webupd8team/java && \
-    apt-get update && \
-    apt-get install -qqy oracle-java8-installer
+    apt-get update
+RUN echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+RUN apt-get install -qqy oracle-java8-installer
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
