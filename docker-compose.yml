@@ -7,7 +7,7 @@ ubuntu:
 picomto_db:
   image: mysql/mysql-server
   environment:
-    MYSQL_ROOT_PASSWORD: testtest
+    MYSQL_ROOT_PASSWORD: picomto_root_passwd
 phpmyadmin:
   image: phpmyadmin/phpmyadmin
   links:
@@ -16,4 +16,4 @@ phpmyadmin:
     - 8181:80
   environment:
     MYSQL_USERNAME: root
-    MYSQL_ROOT_PASSWORD: testtest
+    MYSQL_ROOT_PASSWORD: picomto_root_passwd
