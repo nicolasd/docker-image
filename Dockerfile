@@ -52,7 +52,6 @@ RUN apt-get -qq update \
         mercurial \
         pkg-config \
         texinfo \
-        wget \
         zlib1g-dev
 
 #Install Java
