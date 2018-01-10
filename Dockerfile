@@ -56,8 +56,8 @@ RUN apt-get -qq update \
         zlib1g-dev
 
 #Install Java
-RUN add-apt-repository -y ppa:webupd8team/java && \
-    apt-get update
+RUN add-apt-repository -y ppa:webupd8team/java \
+    && apt-get update
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 RUN apt-get install -qqy oracle-java8-installer
 
@@ -183,9 +183,9 @@ RUN cd ~/ffmpeg_sources \
       --enable-libx265 \
       --enable-nonfree \
     && PATH="$HOME/bin:$PATH" make \
-    && make install
-    && hash -r
-    && cd ~/bin
+    && make install \
+    && hash -r \
+    && cd ~/bin \
     && cp * /usr/bin/
 
 #Install QTFaststart
@@ -196,8 +196,6 @@ RUN cd ~/ffmpeg_sources/ffmpeg/tools \
 #Configure Apache
 RUN a2enmod headers \
     && a2enmod rewrite
-
-
 
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod u+rwx /entrypoint.sh
