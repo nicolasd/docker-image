@@ -194,11 +194,26 @@ RUN cd ~/ffmpeg_sources/ffmpeg/tools \
 RUN a2enmod headers \
     && a2enmod rewrite
 
+#Installation de IonCube
+RUN cd ~ \
+    && wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz \
+    && tar -xvzf ioncube_loaders_lin_x86-64.tar.gz \
+    && cd ioncube \
+    && PHPMODULE=`ls -d /usr/lib/php5/*/ -1 | head -n 1` \
+    && cp ioncube_loader_lin_5.5* $PHPMODULE
+    && echo "zend_extension = $PHPMODULE/ioncube_loader_lin_5.5.so" > /etc/php5/mods-available/00-ioncube.ini \
+    && php5enmod 00-ioncube
+
+#Configuration de PHP
+RUN sed -i 's/^post_max_size.*=.*/post_max_size = 1024M/g' /etc/php5/apache2/php.ini \
+    && sed -i 's/^upload_max_filesize.*=.*/upload_max_filesize = 1024M/g' /etc/php5/apache2/php.ini \
+    && sed -i 's/^max_file_uploads.*=.*/max_file_uploads = 100/g' /etc/php5/apache2/php.ini \
+    && sed -i 's/.*date.timezone.*=.*/date.timezone = \"Europe\/Paris\"/g' /etc/php5/apache2/php.ini
+
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod u+rwx /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 443 80 22
-
 
 #TODO MYSQL SERVER
