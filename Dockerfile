@@ -200,7 +200,7 @@ RUN cd ~ \
     && tar -xvzf ioncube_loaders_lin_x86-64.tar.gz \
     && cd ioncube \
     && PHPMODULE=`ls -d /usr/lib/php5/*/ -1 | head -n 1` \
-    && cp ioncube_loader_lin_5.5* $PHPMODULE
+    && cp ioncube_loader_lin_5.5* $PHPMODULE \
     && echo "zend_extension = $PHPMODULE/ioncube_loader_lin_5.5.so" > /etc/php5/mods-available/00-ioncube.ini \
     && php5enmod 00-ioncube
 
