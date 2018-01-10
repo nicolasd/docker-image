@@ -39,7 +39,7 @@ RUN apt-get -qq update \
         build-essential \
         libass-dev \
         libfreetype6-dev \
-#        libsdl2-dev \
+        libsdl2-dev \
 #        libtheora-dev \
 #        libtool \
 #        libva-dev \
@@ -50,7 +50,7 @@ RUN apt-get -qq update \
 #        libxcb-xfixes0-dev \
         pkg-config \
         texinfo \
-        zlib1g-dev
+        zlib1g-dev 2> /tmp/errors
 
 #Install Java
 RUN add-apt-repository -y ppa:webupd8team/java \
