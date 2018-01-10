@@ -50,7 +50,7 @@ RUN apt-get -qq update \
         libxcb-xfixes0-dev \
         pkg-config \
         texinfo \
-        zlib1g-dev
+        zlib1g-dev > /tmp/aptlog
 
 #Install Java
 RUN add-apt-repository -y ppa:webupd8team/java \
