@@ -213,7 +213,6 @@ RUN sed -i 's/^post_max_size.*=.*/post_max_size = 1024M/g' /etc/php5/apache2/php
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod u+rwx /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+HEALTHCHECK CMD /healthcheck.sh
 
 EXPOSE 443 80 22
-
-#TODO MYSQL SERVER
