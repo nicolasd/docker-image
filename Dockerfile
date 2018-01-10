@@ -38,7 +38,7 @@ RUN apt-get -qq update \
         automake \
         build-essential \
         libass-dev \
-#        libfreetype6-dev \
+        libfreetype6-dev \
 #        libsdl2-dev \
 #        libtheora-dev \
 #        libtool \
