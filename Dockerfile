@@ -12,7 +12,6 @@ RUN apt-get -qq update \
         software-properties-common \
         ca-certificates \
         wget \
-        apt-transport-https \
         vim \
         nano \
         curl \
