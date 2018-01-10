@@ -40,7 +40,7 @@ RUN apt-get -qq update \
         libass-dev \
         libfreetype6-dev \
         libsdl2-dev \
-        libtheora-dev \
+#        libtheora-dev \
 #        libtool \
 #        libva-dev \
 #        libvdpau-dev \
