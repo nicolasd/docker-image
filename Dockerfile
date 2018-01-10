@@ -24,7 +24,6 @@ RUN apt-get -qq update \
         php5-mysql \
         php5-curl \
         php5-memcache \
-        phpmyadmin \
         pngcrush \
         texlive-* \
         libjpeg-progs \
@@ -76,6 +75,7 @@ RUN wget http://mirrors.ctan.org/macros/latex/contrib/anyfontsize.zip \
     && mkdir /var/lib/texmf/plain/anyfontsize/ -p \
     && cp anyfontsize.tex /var/lib/texmf/plain/anyfontsize/anyfontsize.tex \
     && wget http://mirrors.ctan.org/macros/latex/contrib/seqsplit.zip \
+    && unzip seqsplit.zip \
     && cd seqsplit \
     && make \
     && mkdir /usr/share/texlive/texmf/tex/plain/seqsplit/ -p \
