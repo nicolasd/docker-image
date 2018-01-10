@@ -30,27 +30,27 @@ RUN apt-get -qq update \
         libjpeg-progs \
         mysql-client \
         inkscape \
-        build-essential \
-        checkinstall \
-        autoconf \
-        automake \
-        build-essential \
-        cmake \
-        git \
-        libass-dev \
-        libfreetype6-dev \
-        libsdl2-dev \
-        libtheora-dev \
-        libtool \
-        libva-dev \
-        libvdpau-dev \
-        libvorbis-dev \
-        libxcb1-dev \
-        libxcb-shm0-dev \
-        libxcb-xfixes0-dev \
-        mercurial \
-        pkg-config \
-        texinfo \
+#        build-essential \
+#        checkinstall \
+#        autoconf \
+#        automake \
+#        build-essential \
+#        cmake \
+#        git \
+#        libass-dev \
+#        libfreetype6-dev \
+#        libsdl2-dev \
+#        libtheora-dev \
+#        libtool \
+#        libva-dev \
+#        libvdpau-dev \
+#        libvorbis-dev \
+#        libxcb1-dev \
+#        libxcb-shm0-dev \
+#        libxcb-xfixes0-dev \
+#        mercurial \
+#        pkg-config \
+#        texinfo \
         zlib1g-dev
 
 #Install Java
