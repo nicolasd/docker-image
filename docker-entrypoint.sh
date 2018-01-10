@@ -7,10 +7,6 @@ sudo sed -i 's/^upload_max_filesize.*=.*/upload_max_filesize = 1024M/g' /etc/php
 sudo sed -i 's/^max_file_uploads.*=.*/max_file_uploads = 100/g' /etc/php5/apache2/php.ini
 sudo sed -i 's/.*date.timezone.*=.*/date.timezone = \"Europe\/Paris\"/g' /etc/php5/apache2/php.ini
 
-#Configure APACHE2
-a2enmod headers
-a2enmod rewrite
-
 #Configure Ioncube
 wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 tar -xvzf ioncube_loaders_lin_x86-64.tar.gz
