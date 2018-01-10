@@ -39,7 +39,7 @@ RUN apt-get -qq update \
         build-essential \
         libass-dev \
         libfreetype6-dev \
-        libsdl2-dev \
+#        libsdl2-dev \
 #        libtheora-dev \
 #        libtool \
 #        libva-dev \
