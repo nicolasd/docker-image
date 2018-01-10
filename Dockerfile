@@ -1,7 +1,7 @@
 #
 # Docker Image
 #
-FROM ubuntu:14.04 as UBUNTU
+FROM ubuntu:14.04
 MAINTAINER Nicolas DIERICK <nicolas.dierick@picomto.com>
 
 ENV DEBIAN_FRONTEND noninteractive
