@@ -74,12 +74,6 @@ RUN wget http://mirrors.ctan.org/macros/latex/contrib/anyfontsize.zip \
     && cp anyfontsize.sty /usr/share/texlive/texmf/tex/plain/anyfontsize/ \
     && mkdir /var/lib/texmf/plain/anyfontsize/ -p \
     && cp anyfontsize.tex /var/lib/texmf/plain/anyfontsize/anyfontsize.tex \
-    && wget http://mirrors.ctan.org/macros/latex/contrib/seqsplit.zip \
-    && unzip seqsplit.zip \
-    && cd seqsplit \
-    && make \
-    && mkdir /usr/share/texlive/texmf/tex/plain/seqsplit/ -p \
-    && cp *.sty /usr/share/texlive/texmf/tex/plain/seqsplit/ \
     && wget http://mirrors.ctan.org/macros/latex/contrib/xwatermark.zip \
     && unzip xwatermark.zip \
     && cd xwatermark/tex \
@@ -94,8 +88,15 @@ RUN wget http://mirrors.ctan.org/macros/latex/contrib/anyfontsize.zip \
     && unzip ltxkeys.zip \
     && cd ltxkeys \
     && mkdir /usr/share/texlive/texmf/tex/plain/ltxkeys/ -p \
-    && cp ltxkeys.sty /usr/share/texlive/texmf/tex/plain/ltxkeys/ \
-    && texhash
+    && cp ltxkeys.sty /usr/share/texlive/texmf/tex/plain/ltxkeys/
+RUN if [ ! -f /usr/share/texlive/texmf-dist/tex/latex/seqsplit/seqsplit.sty ]; then wget http://mirrors.ctan.org/macros/latex/contrib/seqsplit.zip \
+    && unzip seqsplit.zip \
+    && cd seqsplit \
+    && make \
+    && mkdir /usr/share/texlive/texmf/tex/plain/seqsplit/ -p \
+    && cp *.sty /usr/share/texlive/texmf/tex/plain/seqsplit/; \
+    fi
+RUN texhash
 
 #Install FFMPEG dependencies
 RUN mkdir -p ~/ffmpeg_sources ~/bin \
