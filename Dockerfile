@@ -47,6 +47,9 @@ RUN apt-get -qq update \
         libxcb1-dev \
         libxcb-shm0-dev \
         libxcb-xfixes0-dev \
+        librsvg2 \
+        librsvg2-devel \
+        libxml2-devel \
         pkg-config \
         texinfo \
         zlib1g-dev > /tmp/aptlog
@@ -62,7 +65,7 @@ RUN apt-get build-dep imagemagick -y
 RUN wget "http://www.imagemagick.org/download/ImageMagick.tar.gz" \
     && tar -xvzf ImageMagick.tar.gz \
     && cd `ls -d */ -1 | head -n 1` \
-    && ./configure --prefix=/opt/imagemagick-picomto \
+    && ./configure --prefix=/opt/imagemagick-picomto --with-rsvg=yes \
     && sudo make \
     && checkinstall -D --install=yes -y
 
